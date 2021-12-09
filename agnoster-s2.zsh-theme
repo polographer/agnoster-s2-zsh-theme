@@ -27,6 +27,7 @@
 typeset -aHg AGNOSTER_PROMPT_SEGMENTS=(
     prompt_status
     prompt_context
+    prompt_tray
     prompt_virtualenv
     prompt_dir
     prompt_git
@@ -131,6 +132,14 @@ prompt_status() {
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}$GEAR"
 
   [[ -n "$symbols" ]] && prompt_segment $PRIMARY_FG default " $symbols "
+}
+
+prompt_tray(){
+  myssid=$(sudo iwgetid -r)
+  cpuuse=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
+  #this is to set colors, background and foreground
+  prompt_segment white $PRIMARY_FG
+  print -Pn " $myssid | $cpuuse "
 }
 
 # Display current virtual environment
