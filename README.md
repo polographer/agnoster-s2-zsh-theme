@@ -1,3 +1,10 @@
+S2 theme
+
+modified to code from an ipad
+
+
+
+
 # agnoster.zsh-theme
 
 A ZSH theme optimized for people who use:
