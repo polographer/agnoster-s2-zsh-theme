@@ -152,8 +152,8 @@ prompt_wifi(){
 # }
 
 prompt_cpu(){
-  cpuuse=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
-  cpuuse=` echo $cpuuse | cut -f 1 -d "."`
+  cpuraw=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
+  cpuuse=` echo $cpuraw | cut -f 1 -d "."`
   color="green" 
   if [ "$cpuuse" -ge 30 ]; then
     color="yellow"
@@ -164,7 +164,8 @@ prompt_cpu(){
   #this is to set colors, background and foreground
   prompt_segment $color $PRIMARY_FG
   #print -Pn ' ${cpuuse} %% %p '
-  echo -n " ${cpuuse}%% "
+  echo -n " ${cpuraw
+  }%% "
 }
 
 # Display current virtual environment
