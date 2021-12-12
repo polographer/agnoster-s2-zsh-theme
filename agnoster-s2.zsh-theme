@@ -27,7 +27,8 @@
 typeset -aHg AGNOSTER_PROMPT_SEGMENTS=(
     prompt_status
     prompt_context
-    prompt_tray
+    prompt_wifi
+    prompt_cpu
     prompt_virtualenv
     prompt_dir
     prompt_git
@@ -134,12 +135,36 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment $PRIMARY_FG default " $symbols "
 }
 
-prompt_tray(){
+prompt_wifi(){
   myssid=$(sudo iwgetid -r)
-  cpuuse=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
   #this is to set colors, background and foreground
   prompt_segment white $PRIMARY_FG
-  print -Pn " $myssid | $cpuuse "
+  print -Pn " $myssid "
+}
+
+# prompt_tray(){
+#   myssid=$(sudo iwgetid -r)
+#   cpuuse=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
+
+#   #this is to set colors, background and foreground
+#   prompt_segment white $PRIMARY_FG
+#   print -Pn " $myssid | $cpuuse "
+# }
+
+prompt_cpu(){
+  cpuuse=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
+  cpuuse=` echo $cpuuse | cut -f 1 -d "."`
+  color="green" 
+  if [ "$cpuuse" -ge 30 ]; then
+    color="yellow"
+  fi
+  if [ "$cpuuse" -ge 60 ]; then
+    color="red"
+  fi
+  #this is to set colors, background and foreground
+  prompt_segment $color $PRIMARY_FG
+  #print -Pn ' ${cpuuse} %% %p '
+  echo -n " ${cpuuse}%% "
 }
 
 # Display current virtual environment
