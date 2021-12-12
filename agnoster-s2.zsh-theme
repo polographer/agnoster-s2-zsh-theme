@@ -164,8 +164,7 @@ prompt_cpu(){
   #this is to set colors, background and foreground
   prompt_segment $color $PRIMARY_FG
   #print -Pn ' ${cpuuse} %% %p '
-  echo -n " ${cpuraw
-  }%% "
+  echo -n " ${cpuraw}%% "
 }
 
 # Display current virtual environment
