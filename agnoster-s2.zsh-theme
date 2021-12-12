@@ -137,9 +137,11 @@ prompt_status() {
 
 prompt_wifi(){
   myssid=$(sudo iwgetid -r)
-  #this is to set colors, background and foreground
+  rawsignal=`cat /proc/net/wireless | grep wlan0 | awk '{print $3}' | cut -c1-1` 
+  i=$((rawsignal+1))
+  signal="\u258${i}"
   prompt_segment white $PRIMARY_FG
-  print -Pn " $myssid "
+  print -Pn " $signal $myssid "
 }
 
 # prompt_tray(){
@@ -155,10 +157,10 @@ prompt_cpu(){
   cpuraw=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
   cpuuse=` echo $cpuraw | cut -f 1 -d "."`
   color="green" 
-  if [ "$cpuuse" -ge 30 ]; then
+  if [ "$cpuuse" -ge 40 ]; then
     color="yellow"
   fi
-  if [ "$cpuuse" -ge 60 ]; then
+  if [ "$cpuuse" -ge 70 ]; then
     color="red"
   fi
   #this is to set colors, background and foreground
