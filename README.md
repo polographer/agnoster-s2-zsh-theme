@@ -2,7 +2,7 @@
 
 A modified agnoster designed to provide more information about the machine on the command line. very useful when you don't have a graphical interface. I created it because I use a raspberry with my ipad pro, sometimes without a GUI.
 
-It shows the wifi network currently connected to as well as the signal strenght. It also shows the cpu load as well as the temperature. It's tailored to a raspberry, but it may work on other systems. It also using metric units, I have no intention to change this. See the screenshot below;
+It shows the wifi network currently connected to as well as the signal strenght. It also shows the cpu load as well as the temperature. It's tailored for Raspberry Pi OS but it may work on other systems. It uses metric units; I have no intention to change this. See the screenshot below;
 
 ![modifications](https://github.com/polographer/agnoster-s2-zsh-theme/blob/master/modifications.jpg?raw=true)
 
