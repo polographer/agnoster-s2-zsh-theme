@@ -9,8 +9,7 @@ It shows the wifi network currently connected to as well as the signal strenght.
 The S2 is because is portable.
 
 ***
-# Original Agnoster Readme;
-***
+# Original Agnoster Readme Below:
 
 # agnoster.zsh-theme
 
