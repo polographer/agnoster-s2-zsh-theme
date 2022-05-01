@@ -2,12 +2,12 @@
 
 A modified agnoster designed to provide more information about the machine on the command line. very useful when you don't have a graphical interface. I created it because I use a raspberry with my ipad pro, sometimes without a GUI.
 
+![modifications](https://github.com/polographer/agnoster-s2-zsh-theme/blob/master/modifications.jpg?raw=true)
 
-
-
+The S2 is an evangelion reference.
 
 ***
-Original Agnoster Readme;
+# Original Agnoster Readme;
 ***
 
 # agnoster.zsh-theme
