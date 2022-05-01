@@ -166,7 +166,8 @@ prompt_cpu(){
   #this is to set colors, background and foreground
   prompt_segment $color $PRIMARY_FG
   #print -Pn ' ${cpuuse} %% %p '
-  echo -n " ${cpuraw}%% "
+  cpu=$(</sys/class/thermal/thermal_zone0/temp)
+  echo -n " ${cpuraw}%% $((cpu/1000))°C "
 }
 
 # Display current virtual environment

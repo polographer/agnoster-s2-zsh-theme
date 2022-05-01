@@ -1,9 +1,14 @@
-S2 theme
+# Agnoster S2 theme
 
-modified to code from an ipad
+A modified agnoster designed to provide more information about the machine on the command line. very useful when you don't have a graphical interface. I created it because I use a raspberry with my ipad pro, sometimes without a GUI.
 
 
 
+
+
+***
+Original Agnoster Readme;
+***
 
 # agnoster.zsh-theme
 
